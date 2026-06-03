@@ -1,0 +1,17 @@
+dose,chunk,mc,seed,prefix
+0,1,4,10001,results/chunks/fucox0_chunk1
+0,2,4,10002,results/chunks/fucox0_chunk2
+0,3,4,10003,results/chunks/fucox0_chunk3
+0,4,4,10004,results/chunks/fucox0_chunk4
+25,1,4,35001,results/chunks/fucox25_chunk1
+25,2,4,35002,results/chunks/fucox25_chunk2
+25,3,4,35003,results/chunks/fucox25_chunk3
+25,4,4,35004,results/chunks/fucox25_chunk4
+50,1,4,60001,results/chunks/fucox50_chunk1
+50,2,4,60002,results/chunks/fucox50_chunk2
+50,3,4,60003,results/chunks/fucox50_chunk3
+50,4,4,60004,results/chunks/fucox50_chunk4
+100,1,4,110001,results/chunks/fucox100_chunk1
+100,2,4,110002,results/chunks/fucox100_chunk2
+100,3,4,110003,results/chunks/fucox100_chunk3
+100,4,4,110004,results/chunks/fucox100_chunk4
