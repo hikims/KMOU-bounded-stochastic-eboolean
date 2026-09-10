@@ -1,0 +1,2 @@
+scenario,fucoxanthin,final_time,replicates,seed,sigma,alpha_scale,beta_scale,r,random_weights,fixed_weight,feedback_on,clamp_receptors,saturating_inputs,dts
+combined,100,20,100,20260907,0.01,1,1,0.75,1,0.5,0,1,1,0.002;0.001;0.0005

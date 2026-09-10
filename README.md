@@ -5,10 +5,11 @@ Code accompanying the manuscript:
 > **A Bounded Stochastic Extended Boolean Model for Signal Amplification, Noise
 > Propagation, and Feedback Oscillation in Cell Signaling Pathways**
 > Minsoo Kim, Department of Data Science, Korea Maritime and Ocean University.
-> *(submitted to the Journal of Theoretical Biology, 2026)*
+> *(under review at Mathematical Biosciences, 2026; manuscript MBS-D-26-00706)*
 
 This repository contains the simulation and analysis code that reproduces all
-figures in the paper. The model is a bounded stochastic extended Boolean
+computational figures and tables in the paper, including the analyses added
+during peer review. The model is a bounded stochastic extended Boolean
 formulation in which activation and deactivation/inhibition inputs are separated
 and the diffusion is degenerate at both boundaries, so that the biological state
 space `[0,1]^N` is positively invariant.
@@ -21,18 +22,20 @@ Each directory is self-contained and builds with its own `Makefile`. See the
 | Directory | Purpose | Figures in the paper |
 |-----------|---------|----------------------|
 | [`theory_benchmarks/`](theory_benchmarks/) | Motif-level numerical benchmarks: boundary preservation, moment/CV amplification, and the Hopf-type loop-gain threshold | Figures 1–3 |
-| [`branch_validation/`](branch_validation/) | Branch-specific verification of the NF-κB topology under canonical, noncanonical, and combined stimulation | Figures 5–6 |
-| [`fucoxanthin_dose_response/`](fucoxanthin_dose_response/) | NF-κB pathway-level Fucoxanthin dose-response simulations and representative output dynamics | Figures 7–9 |
+| [`branch_validation/`](branch_validation/) | Branch-specific verification of the NF-κB topology under canonical, noncanonical, and combined stimulation | Figures 6–7 |
+| [`fucoxanthin_dose_response/`](fucoxanthin_dose_response/) | NF-κB pathway-level Fucoxanthin dose-response simulations and representative output dynamics | Figures 8–10 |
+| [`parameter_sensitivity/`](parameter_sensitivity/) | Analyses added in revision: one-at-a-time parameter sensitivity of the NF-κB model with paired-bootstrap intervals and an extended noise scan, validation of the low-activation approximation, and a coupled time-step refinement check | Figures 4, 11–13; Tables 6–7 |
 
 ## Requirements
 
-- A C/C++ toolchain with `make` (e.g. `gcc`/`clang`).
+- A C/C++ toolchain with `make` (e.g. `gcc`/`clang`; C++17 for `parameter_sensitivity/`).
 - Plotting scripts in each `scripts/` directory (see the per-directory README for
-  any Python/Julia dependencies).
+  any Python/Julia dependencies; `parameter_sensitivity/requirements.txt` lists
+  the Python packages used there).
 
 ## Building and running
 
-From within any of the three directories:
+From within any of the directories:
 
 ```bash
 make            # build the simulation executable
@@ -41,14 +44,19 @@ make clean      # remove build artifacts
 ```
 
 Refer to each directory's `README.md` for the exact targets, parameters, and the
-scripts that regenerate the figures.
+scripts that regenerate the figures. `parameter_sensitivity/` uses its own
+targets (`make check`, `make regression-check`, `make smoke`, and the
+analysis-specific targets listed in its README).
 
 ## Reproducing the figures
 
 The compiled executables and raw outputs are **not** tracked in this repository;
 they are regenerated from source. Build each module with `make`, run it, and use
 the scripts in the corresponding `scripts/` directory to produce the figures in
-`figure/`.
+`figure/` (or `figures/` for `parameter_sensitivity/`). The summary tables
+behind Figures 4 and 11–13 and Tables 6–7 are kept in
+`parameter_sensitivity/reference_outputs/`, so those figures and tables can be
+regenerated without repeating the long simulations.
 
 ## Citation
 
@@ -59,9 +67,9 @@ If you use this code, please cite the paper:
   author  = {Kim, Minsoo},
   title   = {A Bounded Stochastic Extended Boolean Model for Signal Amplification,
              Noise Propagation, and Feedback Oscillation in Cell Signaling Pathways},
-  journal = {Journal of Theoretical Biology},
+  journal = {Mathematical Biosciences},
   year    = {2026},
-  note    = {Submitted}
+  note    = {Under review}
 }
 ```
 

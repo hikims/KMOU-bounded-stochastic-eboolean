@@ -1,0 +1,2 @@
+profile,steps,dt,final_time,mc_per_condition_dose,chunks,jobs,bootstrap,base_seed,sigma_base,scenario,doses
+production,500000,0.001,500.0,200,8,8,2000,41000,0.01,combined,0;100

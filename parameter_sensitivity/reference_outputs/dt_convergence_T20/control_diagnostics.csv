@@ -1,0 +1,4 @@
+dt,replicates,predictor_violations,predictor_values,violation_rate,max_lower_overshoot,max_upper_overshoot,mean_overshoot_per_value
+0.002,100,0,22000000,0,0,0,0
+0.001,100,0,44000000,0,0,0,0
+0.0005,100,0,88000000,0,0,0,0
